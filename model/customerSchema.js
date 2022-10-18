@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const jwt = require('jwtoken');
-const secretKey = "mynameismaswathourprojectisonlineshoppingsystem";
 const CustomerSchema = new mongoose.Schema({
 
     name:{
