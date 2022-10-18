@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const jwt = require('jwtoken');
+
 const secretKey = "mynameismaswathourprojectisonlineshoppingsystem";
 const orderSchema = new mongoose.Schema({
   productName:{
