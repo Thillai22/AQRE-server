@@ -10,9 +10,8 @@ const orders = require("./model/orderSchema");
 const cors = require("cors");
 const env = require("dotenv");
 
-
 env.config();
-app.use("/uploads", express.static("./uploads"));
+// app.use("/uploads", express.static("./uploads"));
 
 app.use(express.json());
 const multer = require("multer");
@@ -47,8 +46,7 @@ app.post("/register", async (req, res) => {
       email,
       password,
     });
-    retailer
-      .save();
+    retailer.save();
     res.sendStatus(200);
   }
 });
@@ -74,8 +72,7 @@ app.post("/custreg", async (req, res) => {
       email,
       password,
     });
-    customer
-      .save();
+    customer.save();
     res.sendStatus(200);
   }
 });
@@ -88,6 +85,7 @@ app.post("/custlog", async (req, res) => {
     res.sendStatus(400);
   }
 });
+
 app.post("/addProduct", upload.single("photo"), async (req, res) => {
   const addProduct = new retailProducts({
     productName: req.body.productName,
@@ -254,5 +252,4 @@ app.post("/getyourorder", async (req, res) => {
 
   return res.status(200).json({ data: res2 });
 });
-app.listen(process.env.PORT);
-
+app.listen(8000);
